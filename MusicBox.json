@@ -1,0 +1,31 @@
+{
+    "version": "1.3.2",
+    "description": "A lightweight music player for Windows",
+    "homepage": "https://github.com/asxez/MusicBox",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/asxez/MusicBox/releases/download/v1.3.2/MusicBox-1.3.2-win-x64.zip",
+            "hash": "A1B2C3D4…"
+        }
+    },
+    "bin": "MusicBox.exe",
+    "shortcuts": [
+        [
+            "MusicBox.exe",
+            "MusicBox"
+        ]
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/asxez/MusicBox/releases/latest",
+        "jsonpath": "$.tag_name",
+        "regex": "^v([\\d.]+)$"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/asxez/MusicBox/releases/download/$version/musicbox.$version.exe"
+            }
+        }
+    }
+}
